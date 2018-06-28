@@ -1,0 +1,139 @@
+<html>
+<HEAD> 
+   <meta charset="UTF-8"> 
+   <meta name="vie wport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../_lib/img/hticnsdata__NM__ico__NM__favicon.ico">
+   <title>CNSDATA</title >
+   <script 
+     src="https://code.jquery.com/jquery-3.2.1.min.js"
+     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+     crossorigin="anonymous"></script>
+
+   <!-- bootstrap --> 
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> 
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+
+   <!--SC_JS_LIB-->
+   <!--SC_PAGE_CHARSET-->
+ 
+   <style>
+       .logo-topo{
+           width: 145px;
+           position: relative;
+           top: -8px;
+       }
+       .divFullScreen {
+           position: fixed;
+           left: 0;
+           top: 0;
+           overflow: hidden;
+           z-index: 0;
+           opacity: 1;
+           width: 100%;
+           height: 100%;
+       }
+       .divLeftScreen {
+           background: #fff;
+           position: fixed;
+           right: 0;
+           float: right;
+           /*height: 100%;*/
+           width: 500px;
+           margin: 0;
+           padding: 0;
+           z-index: 1;
+           overflow-y: scroll;
+           overflow-x: hidden;
+           text-align: left;
+       }
+       #login-box-inner {
+           padding: 50px 42px;
+       }
+       form > div {
+           margin-top: 15px;
+       }
+   </style>
+</HEAD>
+<body>
+<div id="banner" class="divFullScreen" style="background-image: url('{SC_LIB_PUBLIC}templates/img/login-full-image2.jpg'); background-size: cover; display: inline-block; width: 866px; height: 662px;">
+</div>
+<div id="form" class="divLeftScreen" style="background-color: white; display: inline-block; float: right; width: 500px; height: 662px;">
+    <div id="login-logo">
+       <img src="{SC_LIB_PUBLIC}templates/img/logo_CNSDATA.png" id="login-logo-small" alt="" style="width: 355px;display:block;margin:0 auto;position: relative;top: 50px;">
+	</div>
+    <div id="login-box" style="position: relative; border: none; top: 25px;" > 
+       <div class="row"> 
+           <div class="col-xs-12"> 
+               <div id="login-box-inner"> 
+                   <form action="./?act=recuperarM" method="post" {SC_FORM_ATTR} id="form-recuperar">
+                       <!--SC_FORM_HIDDEN-->
+	   					<!-- {SC_FIELD_CLASS} -->
+	   					<input type="hidden" {SC_FIELD_INFO_email}>
+                        <div>
+                            <label>Para o endereço de e-mail há mais de um usuário cadastrado. Para qual usuário deseja alterar a senha?</label>    
+                        </div>  
+	   					
+						<div class="input-group"> 
+	   						<input type="hidden" class="" {SC_FIELD_INFO_usuario}>
+	   					<div id="sel-users">
+								
+						  	</div>
+                        </div>
+                        <div>
+                            <a href="../login"><label style="text-align: right;display: block;">Retornar ao login</label></a>
+                        </div>
+                        <div class="row"> 
+                            <div class="col-sm-6 col-xs-12 col-sm-push-6"> 
+                                <button type="submit" class="btn btn-success col-xs-12" {SC_FORM_SUBMIT_CALL}>Recuperar senha</button> 
+                            </div> 
+                        </div> 
+                        <div class="alert" role="alert" style="display:none;z-index: 1;position: relative;" id="msg"></div>
+                    </form>
+               </div> 
+           </div> 
+       </div>
+   </div>
+	   
+	<div>
+		<img src="{SC_LIB_PUBLIC}templates/img/globalblue-logo.jpg" alt="" style="width: 355px; position: absolute; bottom: 40px; left: calc(50% - (355px/2)); ">
+	</div>
+</div>
+<script>
+   $(document).ready(function() {
+		resize();				
+	});
+
+   $(window).resize(function () {
+       resize();
+   });
+
+   function resize() {
+       var formWidth = 500;
+       var bannerWidth = 0;
+       var height = 300;
+       if (window.innerWidth < 570) {
+           formWidth = window.innerWidth;
+       }        
+       bannerWidth = window.innerWidth - formWidth;
+       if ($("body").height() > window.innerHeight) {
+           bannerWidth = bannerWidth - 17;
+       }
+       if (bannerWidth < 0) {
+           $('#banner').css('display', 'none');
+       } else {
+           $('#banner').css('display', 'inline-block');
+       }
+       if (window.innerHeight > 300) {
+           height = window.innerHeight;
+       }
+
+       $('#banner').css('width', bannerWidth);
+       $('#banner').css('height', height);
+       $('#form').css('width', formWidth);
+       $('#form').css('height', height);        
+       //$('#login-box').css('top', height * 0.12);
+       //$('#login-logo-small').css('top', height * 0.1);
+   }
+</script>
+</body> 
+</html>

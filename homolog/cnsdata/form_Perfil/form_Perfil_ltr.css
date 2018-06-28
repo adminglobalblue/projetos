@@ -1,0 +1,255 @@
+.css_id_label { }
+.css_id_line {text-align:left;}
+.css_id_obj {text-align:left;}
+.css_nom_perfil_label {width:300px;}
+.css_nom_perfil_line { }
+.css_nom_perfil_obj { }
+.css_descricao_label {width:300px;}
+.css_descricao_line { }
+.css_descricao_obj { }
+.css_removivel_label { }
+.css_removivel_line { }
+.css_removivel_obj { }
+.css_tipo_permitido_label { }
+.css_tipo_permitido_line { }
+.css_tipo_permitido_obj { }
+.css_condomino_consultar_label {width:300px;}
+.css_condomino_consultar_line { }
+.css_condomino_consultar_obj { }
+.css_condomino_criar_label {width:300px;}
+.css_condomino_criar_line { }
+.css_condomino_criar_obj { }
+.css_condomino_deletar_label {width:300px;}
+.css_condomino_deletar_line { }
+.css_condomino_deletar_obj { }
+.css_condomino_editar_label {width:300px;}
+.css_condomino_editar_line { }
+.css_condomino_editar_obj { }
+.css_empreendimento_consultar_label {width:300px;}
+.css_empreendimento_consultar_line { }
+.css_empreendimento_consultar_obj { }
+.css_empreendimento_criar_label {width:300px;}
+.css_empreendimento_criar_line { }
+.css_empreendimento_criar_obj { }
+.css_empreendimento_deletar_label {width:300px;}
+.css_empreendimento_deletar_line { }
+.css_empreendimento_deletar_obj { }
+.css_empreendimento_editar_label {width:300px;}
+.css_empreendimento_editar_line { }
+.css_empreendimento_editar_obj { }
+.css_operador_consultar_label {width:300px;}
+.css_operador_consultar_line { }
+.css_operador_consultar_obj { }
+.css_operador_criar_label {width:300px;}
+.css_operador_criar_line { }
+.css_operador_criar_obj { }
+.css_operador_deletar_label {width:300px;}
+.css_operador_deletar_line { }
+.css_operador_deletar_obj { }
+.css_operador_editar_label {width:300px;}
+.css_operador_editar_line { }
+.css_operador_editar_obj { }
+.css_perfil_consultar_label {width:300px;}
+.css_perfil_consultar_line { }
+.css_perfil_consultar_obj { }
+.css_perfil_criar_label {width:300px;}
+.css_perfil_criar_line { }
+.css_perfil_criar_obj { }
+.css_perfil_deletar_label {width:300px;}
+.css_perfil_deletar_line { }
+.css_perfil_deletar_obj { }
+.css_perfil_editar_label {width:300px;}
+.css_perfil_editar_line { }
+.css_perfil_editar_obj { }
+.css_prestador_consultar_label {width:300px;}
+.css_prestador_consultar_line { }
+.css_prestador_consultar_obj { }
+.css_prestador_criar_label {width:300px;}
+.css_prestador_criar_line { }
+.css_prestador_criar_obj { }
+.css_prestador_deletar_label {width:300px;}
+.css_prestador_deletar_line { }
+.css_prestador_deletar_obj { }
+.css_prestador_editar_label {width:300px;}
+.css_prestador_editar_line { }
+.css_prestador_editar_obj { }
+.css_projeto_consultar_label {width:300px;}
+.css_projeto_consultar_line { }
+.css_projeto_consultar_obj { }
+.css_projeto_criar_label {width:300px;}
+.css_projeto_criar_line { }
+.css_projeto_criar_obj { }
+.css_projeto_deletar_label {width:300px;}
+.css_projeto_deletar_line { }
+.css_projeto_deletar_obj { }
+.css_projeto_editar_label {width:300px;}
+.css_projeto_editar_line { }
+.css_projeto_editar_obj { }
+.css_sae_consultar_label {width:300px;}
+.css_sae_consultar_line { }
+.css_sae_consultar_obj { }
+.css_sae_criar_label {width:300px;}
+.css_sae_criar_line { }
+.css_sae_criar_obj { }
+.css_sae_deletar_label {width:300px;}
+.css_sae_deletar_line { }
+.css_sae_deletar_obj { }
+.css_sae_editar_label {width:300px;}
+.css_sae_editar_line { }
+.css_sae_editar_obj { }
+.css_sae_notifaprovacao_label {width:300px;}
+.css_sae_notifaprovacao_line { }
+.css_sae_notifaprovacao_obj { }
+.css_sae_notifcriacao_label {width:300px;}
+.css_sae_notifcriacao_line { }
+.css_sae_notifcriacao_obj { }
+.css_tecnicos_consultar_label {width:300px;}
+.css_tecnicos_consultar_line { }
+.css_tecnicos_consultar_obj { }
+.css_tecnicos_criar_label {width:300px;}
+.css_tecnicos_criar_line { }
+.css_tecnicos_criar_obj { }
+.css_tecnicos_deletar_label {width:300px;}
+.css_tecnicos_deletar_line { }
+.css_tecnicos_deletar_obj { }
+.css_tecnicos_editar_label {width:300px;}
+.css_tecnicos_editar_line { }
+.css_tecnicos_editar_obj { }
+.css_usuario_consultar_label {width:300px;}
+.css_usuario_consultar_line { }
+.css_usuario_consultar_obj { }
+.css_usuario_criar_label {width:300px;}
+.css_usuario_criar_line { }
+.css_usuario_criar_obj { }
+.css_usuario_deletar_label {width:300px;}
+.css_usuario_deletar_line { }
+.css_usuario_deletar_obj { }
+.css_usuario_editar_label {width:300px;}
+.css_usuario_editar_line { }
+.css_usuario_editar_obj { }
+.css_sae_submitstatus_label {width:300px;}
+.css_sae_submitstatus_line { }
+.css_sae_submitstatus_obj { }
+.css_sae_exportpdf_label {width:300px;}
+.css_sae_exportpdf_line { }
+.css_sae_exportpdf_obj { }
+.css_sae_delegategbt_label {width:300px;}
+.css_sae_delegategbt_line { }
+.css_sae_delegategbt_obj { }
+.css_pas_consultar_label {width:300px;}
+.css_pas_consultar_line { }
+.css_pas_consultar_obj { }
+.css_pas_editar_label {width:300px;}
+.css_pas_editar_line { }
+.css_pas_editar_obj { }
+.css_pas_deletar_label {width:300px;}
+.css_pas_deletar_line { }
+.css_pas_deletar_obj { }
+.css_pas_criar_label {width:300px;}
+.css_pas_criar_line { }
+.css_pas_criar_obj { }
+.css_projeto_submitstatus_label { }
+.css_projeto_submitstatus_line { }
+.css_projeto_submitstatus_obj { }
+.css_projeto_aprovaritens_label {width:300px;}
+.css_projeto_aprovaritens_line { }
+.css_projeto_aprovaritens_obj { }
+.css_projeto_notifstatus_label { }
+.css_projeto_notifstatus_line { }
+.css_projeto_notifstatus_obj { }
+.css_auditoria_consultar_label {width:300px;}
+.css_auditoria_consultar_line { }
+.css_auditoria_consultar_obj { }
+.css_tecnicos_reativar_label { }
+.css_tecnicos_reativar_line { }
+.css_tecnicos_reativar_obj { }
+.css_pas_notificacao_label { }
+.css_pas_notificacao_line { }
+.css_pas_notificacao_obj { }
+.css_empreendimento_npt_label { }
+.css_empreendimento_npt_line { }
+.css_empreendimento_npt_obj { }
+.css_os_consultar_label {width:300px;}
+.css_os_consultar_line { }
+.css_os_consultar_obj { }
+.css_os_editar_label { }
+.css_os_editar_line { }
+.css_os_editar_obj { }
+.css_os_criar_label { }
+.css_os_criar_line { }
+.css_os_criar_obj { }
+.css_os_deletar_label { }
+.css_os_deletar_line { }
+.css_os_deletar_obj { }
+.css_configuracao_editar_label { }
+.css_configuracao_editar_line { }
+.css_configuracao_editar_obj { }
+.css_rar_consultar_label { }
+.css_rar_consultar_line { }
+.css_rar_consultar_obj { }
+.css_rar_editar_label { }
+.css_rar_editar_line { }
+.css_rar_editar_obj { }
+.css_rar_criar_label { }
+.css_rar_criar_line { }
+.css_rar_criar_obj { }
+.css_rar_deletar_label { }
+.css_rar_deletar_line { }
+.css_rar_deletar_obj { }
+.css_rar_submitstatus_label { }
+.css_rar_submitstatus_line { }
+.css_rar_submitstatus_obj { }
+.css_prestador_addexcecoes_label { }
+.css_prestador_addexcecoes_line { }
+.css_prestador_addexcecoes_obj { }
+.css_operador_addexcecoes_label { }
+.css_operador_addexcecoes_line { }
+.css_operador_addexcecoes_obj { }
+.css_empreendimento_administrador_label { }
+.css_empreendimento_administrador_line { }
+.css_empreendimento_administrador_obj { }
+.css_helper_editar_label {width:300px;}
+.css_helper_editar_line { }
+.css_helper_editar_obj { }
+.css_projeto_forceupmemorialdesc_label { }
+.css_projeto_forceupmemorialdesc_line { }
+.css_projeto_forceupmemorialdesc_obj { }
+.css_projeto_forceuprelfotografico_label { }
+.css_projeto_forceuprelfotografico_line { }
+.css_projeto_forceuprelfotografico_obj { }
+.css_rg_consultar_label { }
+.css_rg_consultar_line { }
+.css_rg_consultar_obj { }
+.css_rg_deletar_label { }
+.css_rg_deletar_line { }
+.css_rg_deletar_obj { }
+.css_rg_editar_label { }
+.css_rg_editar_line { }
+.css_rg_editar_obj { }
+.css_rg_criar_label { }
+.css_rg_criar_line { }
+.css_rg_criar_obj { }
+.css_rg_exportar_label { }
+.css_rg_exportar_line { }
+.css_rg_exportar_obj { }
+.css_rg_enviar_label { }
+.css_rg_enviar_line { }
+.css_rg_enviar_obj { }
+.css_ri_consultar_label { }
+.css_ri_consultar_line { }
+.css_ri_consultar_obj { }
+.css_ri_editar_label { }
+.css_ri_editar_line { }
+.css_ri_editar_obj { }
+.css_ri_criar_label { }
+.css_ri_criar_line { }
+.css_ri_criar_obj { }
+.css_ri_deletar_label { }
+.css_ri_deletar_line { }
+.css_ri_deletar_obj { }
+.css_ri_enviar_label { }
+.css_ri_enviar_line { }
+.css_ri_enviar_obj { }
+.css_empreendimento_visualizacontratos_label { }
+.css_empreendimento_visualizacontratos_line { }
+.css_empreendimento_visualizacontratos_obj { }

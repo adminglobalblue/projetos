@@ -1,0 +1,7 @@
+index.php
+CNSData
+recuperarSenha
+NAO
+contr
+recuperarSenha
+LigMd5

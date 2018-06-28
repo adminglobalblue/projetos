@@ -1,0 +1,12 @@
+@font-face{
+	font-family:'Humanist 521 BT';
+	font-style:normal;
+	font-weight:400;
+	src: url('fonts/hum521b.TTF') format('truetype');
+}
+@font-face{
+	font-family:'Humanist 521 Ubd BT';
+	font-style:normal;
+	font-weight:400;
+	src: url('fonts/HUM521UB.TTF') format('truetype');
+}

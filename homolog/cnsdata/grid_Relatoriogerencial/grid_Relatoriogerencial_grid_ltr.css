@@ -1,0 +1,14 @@
+.css_edit_label {text-align:center;vertical-align:middle;font-weight:bold;}
+.css_edit_grid_line {}
+.css_id_label {text-align:left;vertical-align:middle;font-weight:bold;}
+.css_id_grid_line {vertical-align: top;text-align: left;}
+.css_nom_empreendimento_label {text-align:left;vertical-align:middle;font-weight:bold;}
+.css_nom_empreendimento_grid_line {vertical-align: top;text-align: justify;}
+.css_criado_em_label {text-align:left;vertical-align:middle;font-weight:bold;}
+.css_criado_em_grid_line {vertical-align: top;text-align: left;}
+.css_datainiciovigencia_label {text-align:left;vertical-align:middle;font-weight:bold;}
+.css_datainiciovigencia_grid_line {vertical-align: top;text-align: left;}
+.css_datafimvigencia_label {text-align:left;vertical-align:middle;font-weight:bold;}
+.css_datafimvigencia_grid_line {vertical-align: top;text-align: left;}
+.css_num_status_label {text-align:left;vertical-align:middle;font-weight:bold;}
+.css_num_status_grid_line {vertical-align: top;text-align: left;}

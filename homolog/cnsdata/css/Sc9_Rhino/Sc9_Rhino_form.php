@@ -1,0 +1,36 @@
+<?php
+$str_button = 'hticnsdata9_Rhino';
+$str_toolbar_separator = 'hticnsdata__NM__btn__NM__hticnsdata9_Rhino__NM__nm_hticnsdata9_Rhino_pipe.png';
+$str_ajax_bg = '#6e6e6e';
+$str_ajax_border_s = 'none';
+$str_block_exp = 'hticnsdata__NM__btn__NM__hticnsdata9_Rhino__NM__nm_hticnsdata9_Rhino_open.png';
+$str_block_col = 'hticnsdata__NM__btn__NM__hticnsdata9_Rhino__NM__nm_hticnsdata9_Rhino_opened.png';
+$str_msg_ico_title = 'hticnsdata__NM__btn__NM__hticnsdata9_Rhino__NM__nm_hticnsdata9_Rhino_info.png';
+$str_err_ico_title = 'hticnsdata__NM__btn__NM__hticnsdata9_Rhino__NM__nm_hticnsdata9_Rhino_error.png';
+$ajax_div_icon = 'hticnsdata__NM__ico__NM__sc_horizontal_loading.gif';
+$ajax_icon = 'hticnsdata__NM__ajax_load.gif';
+$str_cal_ico_back = 'hticnsdata__NM__img_move_left.gif';
+$str_cal_ico_for = 'hticnsdata__NM__img_move_right.gif';
+$str_cal_ico_close = 'hticnsdata__NM__img_move_close.png';
+$str_bubble_tail = 'hticnsdata__NM__help_arrow.png';
+$str_img_status_ok = 'hticnsdata__NM__iconsuccess.png';
+$str_img_status_err = 'hticnsdata__NM__iconfails.png';
+$str_img_status_ok_mult = 'hticnsdata__NM__iconsuccess.png';
+$str_img_status_err_mult = 'hticnsdata__NM__iconfails.png';
+$str_error_icon_span = 'title';
+$str_img_mupload_pending = 'hticnsdata__NM__iconfails.png';
+$str_img_mupload_finished = 'hticnsdata__NM__iconsuccess.png';
+$str_label_sort_pos = 'right_cell';
+$index_class_pos = '';
+$index_class_neg = '';
+$index_class_neu = '';
+$str_qs_image_padding = '7';
+$str_label_sort = 'hticnsdata__NM__btn__NM__hticnsdata9_Rhino__NM__nm_hticnsdata9_Rhino_sort.png';
+$str_label_sort_asc = 'hticnsdata__NM__btn__NM__hticnsdata9_Rhino__NM__nm_hticnsdata9_Rhino_sort_asc.png';
+$str_label_sort_desc = 'hticnsdata__NM__btn__NM__hticnsdata9_Rhino__NM__nm_hticnsdata9_Rhino_sort_desc.png';
+$str_toolbarnav_separator = '';
+$img_qs_search = 'hticnsdata__NM__btn__NM__hticnsdata9_Rhino__NM__nm_hticnsdata9_Rhino_qsearch.png';
+$img_qs_clean = 'hticnsdata__NM__btn__NM__hticnsdata9_Rhino__NM__nm_hticnsdata9_Rhino_cancel.png';
+$app_div_str_tree_exp = 'hticnsdata__NM__btn__NM__hticnsdata9_Rhino__NM__nm_hticnsdata9_Rhino_open.png';
+$app_div_str_tree_col = 'hticnsdata__NM__btn__NM__hticnsdata9_Rhino__NM__nm_hticnsdata9_Rhino_opened.png';
+?>

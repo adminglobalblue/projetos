@@ -1,0 +1,7 @@
+index.php
+CNSData
+grid_Operadoras
+NAO
+cons
+grid_Operadoras
+LigMd5

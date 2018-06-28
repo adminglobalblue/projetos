@@ -1,0 +1,781 @@
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="../_lib/libraries/sys/initCustom/mask.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<link href="<?= sc_url_library('sys', 'fonts', 'css_fonts.css'); ?>" rel="stylesheet" type="text/css" />
+<link href="<?= sc_url_library('sys', 'initCustom', 'lightbox/ekko-lightbox.css'); ?>" rel="stylesheet" type="text/css" />
+<link href="<?= sc_url_library('sys', 'initCustom', 'toastr/toastr.css'); ?>" rel="stylesheet" type="text/css" />
+<script src="<?= sc_url_library('sys', 'initCustom', 'toastr/toastr.js'); ?>"></script>
+<script src='<?= sc_url_library("sys", "fullcalendar", "lib/moment.min.js"); ?>'></script>
+<script src='<?= sc_url_library("sys", "initCustom", "lightbox/ekko-lightbox.js"); ?>'></script>
+<script src='<?= sc_url_library("sys", "initCustom", "iframeResizer.min.js"); ?>'></script>
+<script src='<?= sc_url_library("sys", "initCustom", "jquery.mousewheel.min.js"); ?>'></script>
+<style>
+	
+	// flexbox Tabela
+  	[id^=sc-ui-grid-body] > tbody >tr:first-child() > td > a{
+  		display:flex;
+  	}	
+	.scGridTabela > tbody > tr:first-child > .scGridLabelFont > a{
+		display:flex;
+		flex-direction: row-reverse;	
+		align-items:center;
+		justify-content: space-between;
+	}
+	
+	.nbtn_success:hover, .nbtn_success:active {
+		border-color: #5cb85c !important;
+		background-color: #5cb85c !important;
+	}	
+	.nbtn_primary:hover, .nbtn_primary:active {
+		border-color: #337ab7 !important;
+		background-color: #337ab7 !important;
+	}
+	.nbtn_danger:hover, .nbtn_danger:active {
+		border-color: #d9534f !important;
+		background-color: #d9534f !important;
+	}	
+	.nbtn_info:hover, .nbtn_info:active {
+		border-color: #5bc0de !important;
+		background-color: #5bc0de !important;
+	}
+	.nbtn_warning:hover, .nbtn_warning:active {
+		border-color: #f0ad4e !important;
+		background-color: #f0ad4e !important;
+	}
+
+  	.onoffswitch {
+    	position: relative; width: 40px;
+    	-webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+		margin-left: 10px;
+	}
+	.onoffswitch-checkbox {
+	    display: none;
+	}
+	.onoffswitch-label {
+	    display: block; overflow: hidden; cursor: pointer;
+	    border: 2px solid #999999; border-radius: 50px;
+	}
+	.onoffswitch-inner {
+	    display: block; width: 200%; margin-left: -100%;
+	    transition: margin 0.3s ease-in 0s;
+	}
+	.onoffswitch-inner:before, .onoffswitch-inner:after {
+	    display: block; float: left; width: 50%; height: 5px; padding: 0; line-height: 5px;
+	    font-size: 13px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+	    box-sizing: border-box;
+	}
+	.onoffswitch-inner:before {
+	    content: "";
+	    padding-left: 10px;
+	    background-color: #34A7C1; color: #FFFFFF;
+	}
+	.onoffswitch-inner:after {
+	    content: "";
+	    padding-right: 10px;
+	    background-color: #EEEEEE; color: #999999;
+	    text-align: right;
+	}
+	.onoffswitch-switch {
+	    display: block; width: 17px; margin: -6px;
+	    background: #FFFFFF;
+	    position: absolute; top: 0; bottom: 0;
+	    right: 31px;
+	    border: 2px solid #999999; border-radius: 50px;
+	    transition: all 0.3s ease-in 0s; 
+	}
+	.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+	    margin-left: 0;
+	}
+	.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+	    right: 0px; 
+	}
+
+
+	body.scFormPage {
+		margin-bottom: 0px;
+	}
+
+	#ui-datepicker-div {
+		padding: 5px !important;
+		width: 18em !important;
+	}
+	#ui-datepicker-div .ui-datepicker-header {
+		height: 27px !important !important;
+		background: none !important;
+		border: none !important;
+	}
+	.ui-widget-header {
+		background: #ffffff !important;
+    	border: none !important;
+	}
+	.ui-widget-header select {
+		border: none;
+    	outline: none;
+	}
+
+	#id_message_display_content {
+		display: none !important;
+	}
+	
+	.scGridFieldOddFont, .scGridFieldEvenFont {
+		vertical-align: middle;
+	}
+	img[id^=id_img_end_cep_], img[id^=id_img_end_obra_cep_] {
+		display:none
+	}
+	#id_nmgp_idioma {
+		display: none;
+	}
+	.scGridTabela {
+    	margin: 0;
+	}
+	[id^=id_tabs] a, .scTabLine {
+    	text-transform: uppercase;
+	}
+	ul.scTabLine {
+		display:none;
+	}
+
+	.loader {
+	  border: 16px solid #f3f3f3;
+	  border-radius: 50%;
+	  border-top: 16px solid #3498db;
+	  width: 60px;
+	  height: 60px;
+	  -webkit-animation: spin 2s linear infinite; /* Safari */
+	  animation: spin 2s linear infinite;
+	}
+
+	/* Safari */
+	@-webkit-keyframes spin {
+	  0% { -webkit-transform: rotate(0deg); }
+	  100% { -webkit-transform: rotate(360deg); }
+	}
+
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
+	}
+	#id_error_display_fixed {
+		display: none;
+	}
+	.TB_overlayBG {
+		background-color: rgba(255, 255, 255, 0.6) !important;
+	}
+
+	#quicksearchph_t img {
+		right: 8px !important;
+	}
+	
+	#sc-id-mobile-in, #sc-id-mobile-out {display:none !important;}
+
+
+	.scroll-button{
+		position:fixed;
+		bottom:0;
+		color:#347ab6;
+		background:#EEE;
+		border-radius: 10px;
+		bottom:7%;
+		left:93%;
+		padding:3px;
+	}
+
+	/** Modal **/
+	.nmodal-sm {
+		margin-left: calc(50% - 350px/2);
+	}
+	.nmodal-sm > div {
+		width: 350px;
+	}
+
+	.nmodal-md {
+		margin-left: calc(50% - 500px/2);
+	}
+	.nmodal-md > div {
+		width: 500px;
+	}
+
+	.nmodal-lg {
+		margin-left: calc(50% - 700px/2);
+	}
+	.nmodal-lg > div {
+		width: 700px;
+	}
+
+	.nmodal-lg2 {
+		margin-left: calc(50% - 1000px/2);
+	}
+	.nmodal-lg2 > div {
+		width: 1000px;
+	}
+
+	.nmodal-ex {
+		margin-left: calc(50% - 70%/2);
+	}
+	.nmodal-ex > div {
+		width: 70%;
+	}
+
+	.breadcrumb {
+		font-size: 17px;
+    	display: none;
+    	position: relative;
+    	top: -10px;
+    	font-weight: 700;
+    	margin-bottom: 0 !important;
+		padding: 10px 15px !important;
+		margin-top: 8px !important;
+	}
+
+	.overflow-modal {
+    	position: absolute;
+    	width: calc(100% - 20px);
+    	height: 100%;
+	}
+	@media (max-width: 900px) {
+		.nmodal-sm, .nmodal-md, .nmodal-lg, .nmodal-ex, .nmodal-lg2 {
+			margin-left: 1%;
+	   	}
+	  	.nmodal-sm > div, .nmodal-md > div, .nmodal-lg > div, .nmodal-ex > div, .nmodal-lg2 > div {
+			width: 98%;
+	   	}
+	}
+
+    #SC_fast_search_submit_top{right: 9px !important}
+
+	/* Layout Tabela */
+		// 100px
+	td.scGridLabelFont.css_num_telefone_label{min-width:100px !important}
+
+		// 120px
+	td.scGridLabelFont.css_data_abertura_label,td.scGridLabelFont.css_data_inicio_label,td.scGridLabelFont.css_tb_infoprestadores_num_telefone1_label,td.scGridLabelFont.css_tb_prestadores_num_cnpj_label,td.scGridLabelFont.css_data_criacao_label{min-width:120px !important}
+
+		// 160px
+	td.scGridLabelFont.css_tb_prestadores_nom_razaosocial_label{min-width: 160px !important}
+
+	
+</style>
+	
+	
+	
+<script>
+	function verificaTamanho(){
+		p = $(window).width() / $(document).width();
+		if(0.90 > p) $('#div-seta').show();
+		else $('#div-seta').hide();
+	}
+	function scrollH(sentido){
+		if(sentido == 'left') distancia = 0;
+		else distancia = $(document).width(); 
+		$('html, body').animate({scrollLeft: distancia+'px'},1000);
+	}
+	$(window).resize(verificaTamanho);
+	
+	monitoringIframeLoading = function() {
+    var _self = this;
+
+    this.iframeList = {};
+    this.iframeData = {};
+    this.numberLoading = 0;
+    this.idInterval = null;
+	this.ownerLoading = false;
+		
+    this.getSatesIframe = function() {
+        let iframeList = $('iframe');
+        iframeList.each(function(i,iframe){
+			if (iframe.id.startsWith("nmsc_") || iframe.id.startsWith("sc_") || !iframe.id) return;
+            if (typeof _self.iframeData[iframe.id] == "undefined") _self.iframeData[iframe.id] = {};
+
+            let iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            let iframeWin = iframe.contentWindow || iframe;
+            _self.iframeData[iframe.id].iframeDoc = iframeDoc;
+            _self.iframeData[iframe.id].id = iframe.id;
+            _self.iframeData[iframe.id].iframeWin = iframeWin;
+            _self.iframeData[iframe.id].readyState = iframeDoc.readyState;
+
+            if (typeof _self.iframeData[iframe.id].isLoading == "undefined") _self.iframeData[iframe.id].isLoading = false;
+
+            if (_self.iframeData[iframe.id].readyState == "complete") {
+                _self.hideLoading(_self.iframeData[iframe.id]);
+            } else {
+                _self.showLoading(_self.iframeData[iframe.id]);
+            }
+
+            if (!_self.iframeData[iframe.id].iframeOnLoad) {
+                $('#'+iframe.id).on('load', function() {
+                    _self.iframeData[iframe.id].iframeOnLoad = true;
+                    if (!_self.iframeData[iframe.id].windowBeforeunload) {
+                        _self.iframeData[iframe.id].windowBeforeunload = true;
+                        $(_self.iframeData[iframe.id].iframeWin).on('beforeunload', function(){
+                            _self.iframeData[iframe.id].windowBeforeunload = false;
+                            $.blockUI();
+							_self.ownerLoading = true;
+                        }); 
+                    }
+                });
+            }
+        });
+    }
+    this.hasNoComplete = function() {
+        hasNoComplete = false;
+        $.each(this.iframeData, function(i,iframeData){
+            if (iframeData.readyState != "complete") hasNoComplete = true;
+        });
+        return hasNoComplete;
+    }
+    this.showLoading = function(iframeData) {
+        if (iframeData.isLoading) return;
+        iframeData.isLoading = true;
+        this.numberLoading++;
+        if (this.numberLoading > 0) {
+			$.blockUI();
+			this.ownerLoading = true;	
+		}
+    }
+    this.hideLoading = function(iframeData) {
+        if (!iframeData.isLoading) return;
+        iframeData.isLoading = false;
+        this.numberLoading--;
+        if (/*this.numberLoading == 0 || */!this.hasNoComplete() && this.ownerLoading) $.unblockUI();
+    }
+    this.destroy = function () {
+        if (this.idInterval) clearInterval(this.idInterval);
+    }
+
+    this.idInterval = setInterval(function(){_self.getSatesIframe();},250);
+}
+
+  	$(document).ready(function() {
+		verificaTamanho();
+
+		objMonitoringIframeLoading = new monitoringIframeLoading();
+		
+    	$var = $('.scButton_default').filter(function() {
+			return this;
+      	});
+      	$.each($var, function(i, o){
+	      	eventButton = $(o).attr('onclick');
+			if(eventButton) {
+				if (eventButton.match(/novo/g)) {
+					//$(o).addClass('nbtn_success');
+				} else if (eventButton.match(/alterar/g)) {
+					//$(o).addClass('nbtn_success');
+				} else if (eventButton.match(/clone/g)) {  			
+					//$(o).addClass('nbtn_primary');
+				} else if (eventButton.match(/excluir/g)) {
+					//$(o).addClass('nbtn_danger');
+				}
+			}
+   		}); 
+		
+		/*$('input[type=checkbox], input[type=radio]').each(function(i,o) {
+			id = $(o).attr('id');
+			if (!id) {
+				id = Math.floor((Math.random() * 100000) + 1)
+				$(o).attr('id', id);
+			}
+			$(o).hide();
+			$(o).addClass('onoffswitch-checkbox');
+			$(o).wrap('<div style="display: inline-block;margin-right: 16px;margin-bottom: 25px;"><div class="onoffswitch"></div></div>');
+			$(o).after('<label class="onoffswitch-label" for="'+id+'"> \
+        		<span class="onoffswitch-inner"></span> \
+        		<span class="onoffswitch-switch"></span> \
+    		</label>');
+		});*/
+	
+		$("#id_div_process").css("margin", "0");
+		$("#id_div_process").css("left", "calc(50% - 46px)");
+		$("#id_div_process").css("top", "calc(50% - 46px)");
+		$("#id_div_process").css("position", "absolute");
+		$("#id_div_process").css("z-index", "1000");
+		$("#id_div_process").removeClass("scFormProcessFixed");
+		$("#id_div_process").html(
+			`<div class="loader"></div>`
+		);
+	
+		$("#id_div_process_block").css("margin", "0");
+		$("#id_div_process_block").css("left", "calc(50% - 46px)");
+		$("#id_div_process_block").css("top", "calc(50% - 46px)");
+		$("#id_div_process_block").css("position", "absolute");
+		$("#id_div_process_block").css("z-index", "1000");
+		$("#id_div_process_block").removeClass("scFormProcessFixed");
+		$("#id_div_process_block").html(
+			`<div class="loader"></div>`
+		);
+	
+		$('#TB_load').css("margin", "0");
+		$("#TB_load").css("left", "calc(50% - 46px)");
+		$("#TB_load").css("top", "calc(50% - 46px)");
+		$("#TB_load").css("position", "absolute");
+		$("#TB_load").css("z-index", "1000");
+		$("#TB_load").removeClass("scFormProcessFixed");
+		$("#TB_load").html(
+			`<div class="loader"></div>`
+		);
+	
+		$.blockUI = function () {
+			this.messageblockUI = $("#id_div_process");
+			this.messageblockUI.show();
+		}
+		$.unblockUI = function () {
+			if (this.messageblockUI.length) {				
+				this.messageblockUI.hide();
+			}
+		}
+		$.isblockUI = function() {
+			return this.messageblockUI.css("display") == "none" ? false : true;
+		}
+		$.removeBlockUI = function () {
+			setTimeout(function(){
+				$("#id_div_process").remove();
+			},1000);
+		}
+	
+		let scTabLine = $("ul.scTabLine");
+		if (scTabLine.length > 0) {
+			scTabLine.css('display', 'flex')
+				.css('overflow-y', 'hidden')
+				.css('white-space', 'nowrap');
+			scTabLine.find('> li').css('white-space', 'nowrap');
+			setInterval(function(){
+				scTabLine.css('width', $('body').width()+"px");
+				if (scTabLine[0].offsetHeight < scTabLine[0].scrollHeight ||
+					scTabLine[0].offsetWidth < scTabLine[0].scrollWidth) {
+					scTabLine.css('overflow-x', 'scroll')
+				} else {
+					scTabLine.css('overflow-x', 'hidden');
+				}
+			},500);
+		}
+		
+		$('#id_error_display_table_frame').html(`
+			<!--<div id="id_error_display_table_frame" role="dialog" style="position: absolute; z-index:1000; display:none">-->
+				<div>
+					<div class="modal-content">
+						<div class="modal-body" id="modalBody" style="text-align:center">
+						<span id="id_error_display_table_text"></span>
+						<br><button type="button" class="btn btn-primary" onclick="id_error_display_table_frame.style.display = 'none'">Ok</button>
+						</div>
+					</div>
+				</div>
+			<!--</div>-->								   
+		`);
+	
+		pageNumber = $('#quant_linhas_f0_bot').val();
+		pagina = 0;
+		window.setInterval(function(){
+			//$('[id^=sc_ins_line_]').click(function(){
+			//	$('html, body').animate(
+			//		{scrollTop: $('[id^=idVertRow]:last-child()').offset().top+'px'}, 500
+			//	);	
+			//})
+				
+			
+			if(typeof(nm_gp_rec_ini)!="undefined"){
+				if(pagina != nm_gp_rec_ini){
+					pagina = nm_gp_rec_ini;
+					$('html, body').animate(
+						{scrollTop: $('.scGridTabela:first-child()').offset().top+'px'}, 1000
+					);
+				}
+			}
+			if (pageNumber != $('#quant_linhas_f0_bot').val()) {
+				pageNumber = $('#quant_linhas_f0_bot').val();
+				if (nm_gp_ini != "ini") {
+			  		nm_gp_submit_rec('ini');
+				}
+			}
+			
+			$('[id^=id_sc_loaded_]  span > [class^=id_mu_data_] > a').each(function(i,o){
+				if (!$(o).data("name-download")) {
+					patt = new RegExp("\'(.+?)\'", "g");
+					imgName = $(o).text();
+					href = $(o).attr("href");
+					if (href.indexOf("nm_mostra_img") >= 0) {
+						$(o).attr("href", "");
+						href = patt.exec(href)[1];
+						$(o).attr("onclick", `nm_mostra_img('${href}', '${imgName}', this, event)`)
+						$(o).data("name-download", imgName);
+					}
+				}
+			});
+		}, 500);
+	
+		nm_mostra_img = function (imagem, nameImg, elem, event) {
+			typeof event != "object" || event.preventDefault();
+			parent = window.top.menuArvore_iframe;
+			if (typeof nameImg == "string") {
+				parent.sModal("show", nameImg, `<div style="max-height: 70vh;overflow: auto;">
+					<img src="${imagem}" style="max-width: 100%;max-height: 100%;display: block;margin: 0 auto;"><br><br>
+					<a class="btn btn-primary" href="${imagem}" download="${nameImg}">Download</a>
+					<a class="btn btn-primary" onclick="close_sModal()">Fechar</a>
+				</div>`, {sizeClass:"ex"});
+			} else {
+				parent.sModal("show", '', `<div style="max-height: 70vh;overflow: auto;">
+					<img src="${imagem}" style="max-width:100%"><br><br>
+					<a class="btn btn-primary" onclick="close_sModal()">Fechar</a>
+				</div>`, {sizeClass:"ex"});
+			}
+		}
+		
+		$('[id^=sc_b_new]').click(function(){
+			setTimeout(function(){
+				elem = $('[id^=idVertRow]:last-child()');
+				if (elem) $('html, body').animate({scrollTop: elem.offset().top+'px'}, 500)
+			}, 500);
+		});
+ 	});
+
+	if (typeof id_error_message_fixed != "undefined")  {
+		msg = id_error_message_fixed.innerText;
+		id_error_display_fixed.innerHTML = `
+			<!--<div id="id_error_display_table_frame" role="dialog" style="position: absolute; z-index:1000; display:none">-->
+				<div>
+					<div class="modal-content">
+							<div class="modal-body" id="modalBody" style="text-align:center">
+						<div class="scFormErrorMessage" style="width:300px"><span id="id_error_message_fixed">`+msg+`</span></div>
+						<br><button type="button" class="btn btn-primary" onclick="id_error_display_fixed.style.display = 'none'">Ok</button>
+						</div>
+					</div>
+				</div>
+			<!--</div>-->								   
+		`;
+	}
+
+	function close_sModal() {sModal('close')}
+
+	function sModal(act, title, body, opt) {
+		$('.scButton_default').css('vertical-align: middle; display:inline-block;');
+		if(act == "show") {
+			if (!opt) { 
+				opt = {};
+			} else if (whatIs(opt) == "String") {
+				opt = JSON.parse(opt);
+			}
+			
+			opt.type = opt.type ? "text-"+opt.type : '';
+			opt.pClass = opt.pClass ? opt.pClass : '';
+			opt.pStyle = opt.pStyle ? opt.pStyle : '';
+			opt.sizeClass = opt.sizeClass ? "nmodal-"+opt.sizeClass : "nmodal-md";
+			
+			$('#modalTitle').html(title);
+			$('#modalBody').html('<p class="'+opt.type+' '+opt.pClass+'" style="'+opt.pStyle+'" webkitallowfullscreen mozallowfullscreen allowfullscreen>'+body+'</p>');
+			$('#alertModel').removeClass(function (index, className) {
+    			return (className.match (/\nmodal-\S+/g) || []).join(' ');
+			});
+			$('#alertModel').addClass(opt.sizeClass + ' in');
+			$('#alertModel').show();
+			$('.overflow-modal').show();
+		} else if (act == "close") {
+			$('.overflow-modal').hide();
+			$('#alertModel').hide();
+			$('#alertModel').removeClass('in');
+		}
+	}
+
+	function redirTo(to) {
+		window.location = to;
+	}
+
+	function whatIs(object) {
+		var stringConstructor = "test".constructor;
+		var arrayConstructor = [].constructor;
+		var objectConstructor = {}.constructor;
+		
+	    if (object === null) {
+	        return "null";
+	    }
+	    else if (object === undefined) {
+	        return "undefined";
+	    }
+	    else if (object.constructor === stringConstructor) {
+	        return "String";
+	    }
+	    else if (object.constructor === arrayConstructor) {
+	        return "Array";
+	    }
+	    else if (object.constructor === objectConstructor) {
+	        return "Object";
+	    }
+	    else {
+	        return null;
+	    }
+	}
+
+	function loadBreadcrumb(path, pers) {
+		path = path ? path : [];
+		$.each(path, function(i, o) {
+			path[i] = path[i].toUpperCase();
+			path[i] = path[i].replace(/:SVGINFO:/g, '../_lib/libraries/sys/templates/img/info-sign.svg');
+		});
+		if (path.length > 0) {
+			$('.breadcrumb').html(path.join(' <i class="glyphicon glyphicon-chevron-right"></i> '));
+			$('.breadcrumb').show();
+		} else {
+			$('.breadcrumb').hide();
+		}
+		if(pers){ $('.breadcrumb').attr('style', pers); }
+	}
+
+	toastr.options = {
+	  "closeButton": true,
+	  "debug": false,
+	  "newestOnTop": false,
+	  "progressBar": true,
+	  "positionClass": "toast-top-right",
+	  "preventDuplicates": false,
+	  "onclick": null,
+	  "showDuration": "300",
+	  "hideDuration": "1000",
+	  "timeOut": "5000",
+	  "extendedTimeOut": "1000",
+	  "showEasing": "swing",
+	  "hideEasing": "linear",
+	  "showMethod": "fadeIn",
+	  "hideMethod": "fadeOut"
+	}
+	
+	var getHelper = GETHELPER = function (search) {
+		$.ajax({
+			url: "../AjaxHelper?action=getHelper&query="+search,		
+			dataType: "json",    
+			success: function (data) {
+				if (data.s) {
+					sModal('show', data.c.titulo, data.c.conteudo+'<br><br><a class="btn btn-primary" onclick="close_sModal()">Ok</a>', {sizeClass : "lg"});
+				}
+			},
+			error: function (data) {}
+		});
+	}
+
+
+	/* Layout Tabela
+	$(document).ready(function(){
+		$('td.scGridLabelFont.css_data_criacao_label').css('min-width', '120px');
+	});
+	*/
+
+	function validateFileSC (_lang) {
+		this._lang = _lang;
+		this.fields = {};
+		this.getExt = function(filename) {
+			return filename.substr(filename.lastIndexOf('.') + 1).toLowerCase();
+		}
+		this.units = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+		this.niceBytes = function(x){
+			let l = 0, n = parseInt(x, 10) || 0;
+			while(n >= 1024 && ++l) n = n/1024;
+			let str = (n.toFixed(n >= 10 || l < 1 ? 0 : 1) + ' ' + this.units[""+l]);
+			return str.replace('.', ',');
+		}
+		this.watch = function(field, std) {
+			_self = this;
+
+			field = field.toLowerCase();
+			this.fields[""+field] = {
+				label: "#id_label_"+field,
+				upload: "#id_sc_field_"+field,
+				sizeB: std.sizeB,
+				sizeHB: this.niceBytes(std.sizeB),
+				type: std.type,
+				fileInAnalysis: 0,
+				totalFiles: 0,
+				msgHTML: null
+			}
+
+			$(this.fields[""+field].label).append(`
+				<hr>`+this._lang.label_max+`: `+this.fields[""+field].sizeHB+`<br>`+this._lang.label_formato+`: `+this.fields[""+field].type.join(", ")+`
+				<div id="fileupload_outputmsg_`+field+`"></div>
+			`);
+			this.fields[""+field].msgField = $('#fileupload_outputmsg_'+field);
+			$('#hidden_field_data_'+field).css("vertical-align", "top");
+
+			$(this.fields[""+field].upload).bind('fileuploadsend', function (e, data) {
+				fieldInput = data.paramName.replace(/(\[|\])/g, '');
+				file = {
+					type: data.files[0].type,
+					size: data.files[0].size,
+					name: data.files[0].name,
+					ext: _self.getExt(data.files[0].name)
+				}
+				
+				_self.fields[""+fieldInput].totalFiles = data.originalFiles.length;
+				_self.fields[""+fieldInput].fileInAnalysis++;
+
+				statusFile = true;
+				if (_self.fields[""+fieldInput].type.indexOf(file.ext) == -1) {
+					statusFile = false;
+				}
+				if (_self.fields[""+fieldInput].sizeB < file.size) {
+					statusFile = false;
+				}
+
+				if (!statusFile) {
+					$('[id="id_sc_file_'+file.name+'"]').remove();
+					if (!_self.fields[""+fieldInput].msgHTML) {
+						_self.fields[""+fieldInput].msgHTML = '<hr>'+_self._lang.label_arquivoinvalido+'<br>';
+					}
+					_self.fields[""+fieldInput].msgHTML += `<p style="color:red;margin-left:10px"><b>`+file.name+`</b><br>
+						`+_self._lang.label_formato+`: <b>`+file.ext+`</b> | `+_self._lang.label_tamanho+`: <b>`+_self.niceBytes(file.size)+`</b>
+						</p>`;
+				}
+
+				if (_self.fields[""+fieldInput].totalFiles ==  _self.fields[""+fieldInput].fileInAnalysis) {
+					_self.fields[""+fieldInput].msgField.html(_self.fields[""+fieldInput].msgHTML);
+					_self.fields[""+fieldInput].msgHTML = null;
+					_self.fields[""+fieldInput].fileInAnalysis = _self.fields[""+fieldInput].totalFiles = 0;
+					clearTimeout(_self.fields[""+fieldInput].idTimeoutMsg);
+					_self.fields[""+fieldInput].idTimeoutMsg = setTimeout(() => {
+						_self.fields[""+fieldInput].msgField.html('');
+					}, 10000);
+				}
+				return statusFile;
+			});
+		}
+	}
+	function checkBrowser(){
+		c = navigator.userAgent.search("Chrome");
+		f = navigator.userAgent.search("Firefox");
+		m8 = navigator.userAgent.search("MSIE 8.0");
+		m9 = navigator.userAgent.search("MSIE 9.0");
+		if (c > -1) {
+			browser = "Chrome";
+		} else if (f > -1) {
+			browser = "Firefox";
+		} else if (m9 > -1) {
+			browser ="MSIE 9.0";
+		} else if (m8 > -1) {
+			browser ="MSIE 8.0";
+		}
+		return browser;
+	}
+</script>
+
+	
+<!--<div id="div-seta" class="scroll-button" style="display:none">
+	<span style="top:2px;cursor:pointer" class="glyphicon glyphicon-chevron-left" onclick="scrollH('left')"></span>
+	<span style="top:2px;cursor:pointer" class="glyphicon glyphicon-chevron-right" onclick="scrollH('right')"></span>
+</div>-->
+	
+<div class="breadcrumb"></div>
+<div class="overflow-modal" style="display:none;position:fixed;z-index: 1001;background-color: #ffffff88;top:0">
+	<div class="fade" id="alertModel" role="dialog" style="position: absolute; z-index:1000; display:none;width:100%;top:25px">
+		<div>
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" onclick="sModal('close')">&times;</button>
+					<h4 class="modal-title" id="modalTitle"></h4>
+				</div>
+				<div class="modal-body" id="modalBody" style="text-align:center">
+				</div>
+				<!--<div class="modal-footer">
+					<button type="button" class="btn btn-default" onclick="sModal('close')"></button>
+						a
+				</div>-->
+			</div>
+		</div>
+	</div>
+</div>
+						

@@ -1,0 +1,168 @@
+.css_id_label { }
+.css_id_line {text-align:left;}
+.css_id_obj {text-align:left;}
+.css_id_tiposae_label { }
+.css_id_tiposae_line {text-align:left;}
+.css_id_tiposae_obj {text-align:left;}
+.css_id_empreendimento_label {width:200px;}
+.css_id_empreendimento_line {text-align:left;}
+.css_id_empreendimento_obj {text-align:left;}
+.css_id_condomino_label { }
+.css_id_condomino_line {text-align:left;}
+.css_id_condomino_obj {text-align:left;}
+.css_id_conjunto_label { }
+.css_id_conjunto_line {text-align:left;}
+.css_id_conjunto_obj {text-align:left;}
+.css_id_operadora_label {width:300px;}
+.css_id_operadora_line {text-align:left;}
+.css_id_operadora_obj {text-align:left;}
+.css_id_prestador_label {width:300px;}
+.css_id_prestador_line {text-align:left;}
+.css_id_prestador_obj {text-align:left;}
+.css_id_usuario_label { }
+.css_id_usuario_line {text-align:left;}
+.css_id_usuario_obj {text-align:left;}
+.css_tipo_cliente_label { }
+.css_tipo_cliente_line { }
+.css_tipo_cliente_obj { }
+.css_nom_responsavel1_label {width:200px;}
+.css_nom_responsavel1_line { }
+.css_nom_responsavel1_obj { }
+.css_num_telefone1_label {width:200px;}
+.css_num_telefone1_line { }
+.css_num_telefone1_obj { }
+.css_nom_responsavel2_label { }
+.css_nom_responsavel2_line { }
+.css_nom_responsavel2_obj { }
+.css_num_telefone2_label { }
+.css_num_telefone2_line { }
+.css_num_telefone2_obj { }
+.css_num_celular2_label { }
+.css_num_celular2_line { }
+.css_num_celular2_obj { }
+.css_nom_responsavel3_label { }
+.css_nom_responsavel3_line { }
+.css_nom_responsavel3_obj { }
+.css_num_telefone3_label { }
+.css_num_telefone3_line { }
+.css_num_telefone3_obj { }
+.css_num_celular3_label { }
+.css_num_celular3_line { }
+.css_num_celular3_obj { }
+.css_instalacaoantena_label { }
+.css_instalacaoantena_line { }
+.css_instalacaoantena_obj { }
+.css_emergencial_label { }
+.css_emergencial_line { }
+.css_emergencial_obj { }
+.css_data_inicio_label { }
+.css_data_inicio_line { }
+.css_data_inicio_obj { }
+.css_hora_inicio_label { }
+.css_hora_inicio_line { }
+.css_hora_inicio_obj { }
+.css_data_fim_label { }
+.css_data_fim_line { }
+.css_data_fim_obj { }
+.css_hora_fim_label { }
+.css_hora_fim_line { }
+.css_hora_fim_obj { }
+.css_desc_label { }
+.css_desc_line { }
+.css_desc_obj { }
+.css_num_sae_label { }
+.css_num_sae_line { }
+.css_num_sae_obj { }
+.css_data_abertura_label { }
+.css_data_abertura_line { }
+.css_data_abertura_obj { }
+.css_num_status_label {width:300px;}
+.css_num_status_line { }
+.css_num_status_obj { }
+.css_data_fechamento_label { }
+.css_data_fechamento_line { }
+.css_data_fechamento_obj { }
+.css_id_usuario_fechamento_label { }
+.css_id_usuario_fechamento_line {text-align:left;}
+.css_id_usuario_fechamento_obj {text-align:left;}
+.css_num_ativo_label { }
+.css_num_ativo_line { }
+.css_num_ativo_obj { }
+.css_optantegbtec_label { }
+.css_optantegbtec_line { }
+.css_optantegbtec_obj { }
+.css_pontodeencontro_label { }
+.css_pontodeencontro_line { }
+.css_pontodeencontro_obj { }
+.css_referenteprojeto_label { }
+.css_referenteprojeto_line { }
+.css_referenteprojeto_obj { }
+.css_gbt_disponiveis_label { }
+.css_gbt_disponiveis_line { }
+.css_gbt_disponiveis_obj { }
+.css_gbt_sae_label { }
+.css_gbt_sae_line { }
+.css_gbt_sae_obj { }
+.css_gbt_selecionados_label { }
+.css_gbt_selecionados_line { }
+.css_gbt_selecionados_obj { }
+.css_id_andar_label {width:300px;}
+.css_id_andar_line { }
+.css_id_andar_obj { }
+.css_id_torre_label {width:300px;}
+.css_id_torre_line { }
+.css_id_torre_obj { }
+.css_confirmgbtdisponclick_label { }
+.css_confirmgbtdisponclick_line { }
+.css_confirmgbtdisponclick_obj { }
+.css_label_pas_label { }
+.css_label_pas_line { }
+.css_label_pas_obj { }
+.css_removeronclick_label { }
+.css_removeronclick_line { }
+.css_removeronclick_obj { }
+.css_resumoagendastatus_label { }
+.css_resumoagendastatus_line { }
+.css_resumoagendastatus_obj { }
+.css_savedataonclick_label { }
+.css_savedataonclick_line { }
+.css_savedataonclick_obj { }
+.css_savegbtonclick_label { }
+.css_savegbtonclick_line { }
+.css_savegbtonclick_obj { }
+.css_savestatusonclick_label { }
+.css_savestatusonclick_line { }
+.css_savestatusonclick_obj { }
+.css_sendanaliseonclick_label { }
+.css_sendanaliseonclick_line { }
+.css_sendanaliseonclick_obj { }
+.css_stepagendamento_label { }
+.css_stepagendamento_line { }
+.css_stepagendamento_obj { }
+.css_stepdescricao_label { }
+.css_stepdescricao_line { }
+.css_stepdescricao_obj { }
+.css_stepempreendimento_label { }
+.css_stepempreendimento_line { }
+.css_stepempreendimento_obj { }
+.css_stepoperadora_label { }
+.css_stepoperadora_line { }
+.css_stepoperadora_obj { }
+.css_stepprestadora_label { }
+.css_stepprestadora_line { }
+.css_stepprestadora_obj { }
+.css_tecoperadora_label { }
+.css_tecoperadora_line { }
+.css_tecoperadora_obj { }
+.css_tecprestadora_label { }
+.css_tecprestadora_line { }
+.css_tecprestadora_obj { }
+.css_tiposae_label {width:300px;}
+.css_tiposae_line { }
+.css_tiposae_obj { }
+.css_os_info_label {width:1px;}
+.css_os_info_line { }
+.css_os_info_obj { }
+.css_label_dataexpiracaoprojeto_label { }
+.css_label_dataexpiracaoprojeto_line { }
+.css_label_dataexpiracaoprojeto_obj { }

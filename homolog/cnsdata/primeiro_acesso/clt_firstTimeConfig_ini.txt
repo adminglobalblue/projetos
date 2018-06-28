@@ -1,0 +1,7 @@
+index.php
+CNSData
+clt_firstTimeConfig
+NAO
+contr
+primeiro_acesso
+LigMd5

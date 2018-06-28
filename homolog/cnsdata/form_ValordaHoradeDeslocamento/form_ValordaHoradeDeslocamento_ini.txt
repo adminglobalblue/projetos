@@ -1,0 +1,7 @@
+index.php
+CNSData
+form_ValordaHoradeDeslocamento
+NAO
+form
+form_ValordaHoradeDeslocamento
+LigMd5

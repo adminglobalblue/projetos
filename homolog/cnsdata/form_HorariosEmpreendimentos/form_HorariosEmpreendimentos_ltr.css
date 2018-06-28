@@ -1,0 +1,96 @@
+.css_id_empreendimento_label {text-align:center;vertical-align:middle;}
+.css_id_empreendimento_line {text-align:left;}
+.css_id_empreendimento_obj {text-align:left;}
+.css_hor_segvistoriainicio_label {text-align:right;vertical-align:middle;}
+.css_hor_segvistoriainicio_line { }
+.css_hor_segvistoriainicio_obj { }
+.css_hor_segvistoriafim_label {text-align:right;vertical-align:middle;}
+.css_hor_segvistoriafim_line { }
+.css_hor_segvistoriafim_obj { }
+.css_hor_seginstalacaoinicio_label {text-align:right;vertical-align:middle;}
+.css_hor_seginstalacaoinicio_line {text-align:left;vertical-align:middle;}
+.css_hor_seginstalacaoinicio_obj { }
+.css_hor_seginstalacaofim_label {text-align:right;vertical-align:middle;}
+.css_hor_seginstalacaofim_line { }
+.css_hor_seginstalacaofim_obj { }
+.css_hor_tervistoriainicio_label {text-align:right;vertical-align:middle;}
+.css_hor_tervistoriainicio_line { }
+.css_hor_tervistoriainicio_obj { }
+.css_hor_tervistoriafim_label {text-align:right;vertical-align:middle;}
+.css_hor_tervistoriafim_line { }
+.css_hor_tervistoriafim_obj { }
+.css_hor_terinstalacaoinicio_label {text-align:right;vertical-align:middle;}
+.css_hor_terinstalacaoinicio_line { }
+.css_hor_terinstalacaoinicio_obj { }
+.css_hor_terinstalacaofim_label {text-align:right;vertical-align:middle;}
+.css_hor_terinstalacaofim_line { }
+.css_hor_terinstalacaofim_obj { }
+.css_hor_quainstalacaoinicio_label {text-align:right;vertical-align:middle;}
+.css_hor_quainstalacaoinicio_line { }
+.css_hor_quainstalacaoinicio_obj { }
+.css_hor_quainstalacaofim_label {text-align:right;vertical-align:middle;}
+.css_hor_quainstalacaofim_line { }
+.css_hor_quainstalacaofim_obj { }
+.css_hor_quavistoriainicio_label {text-align:right;vertical-align:middle;}
+.css_hor_quavistoriainicio_line { }
+.css_hor_quavistoriainicio_obj { }
+.css_hor_quavistoriafim_label {text-align:right;vertical-align:middle;}
+.css_hor_quavistoriafim_line { }
+.css_hor_quavistoriafim_obj { }
+.css_hor_quiinstalacaoinicio_label {text-align:right;vertical-align:middle;}
+.css_hor_quiinstalacaoinicio_line { }
+.css_hor_quiinstalacaoinicio_obj { }
+.css_hor_quiinstalacaofim_label {text-align:right;vertical-align:middle;}
+.css_hor_quiinstalacaofim_line { }
+.css_hor_quiinstalacaofim_obj { }
+.css_hor_quivistoriainicio_label {text-align:right;vertical-align:middle;}
+.css_hor_quivistoriainicio_line { }
+.css_hor_quivistoriainicio_obj { }
+.css_hor_quivistoriafim_label {text-align:right;vertical-align:middle;}
+.css_hor_quivistoriafim_line { }
+.css_hor_quivistoriafim_obj { }
+.css_hor_sexinstalacaoinicio_label {text-align:right;vertical-align:middle;}
+.css_hor_sexinstalacaoinicio_line { }
+.css_hor_sexinstalacaoinicio_obj { }
+.css_hor_sexinstalacaofim_label {text-align:right;vertical-align:middle;}
+.css_hor_sexinstalacaofim_line { }
+.css_hor_sexinstalacaofim_obj { }
+.css_hor_sexvistoriainicio_label {text-align:right;vertical-align:middle;}
+.css_hor_sexvistoriainicio_line { }
+.css_hor_sexvistoriainicio_obj { }
+.css_hor_sexvistoriafim_label {text-align:right;vertical-align:middle;}
+.css_hor_sexvistoriafim_line { }
+.css_hor_sexvistoriafim_obj { }
+.css_hor_sabinstalacaoinicio_label {text-align:right;vertical-align:middle;}
+.css_hor_sabinstalacaoinicio_line { }
+.css_hor_sabinstalacaoinicio_obj { }
+.css_hor_sabinstalacaofim_label {text-align:right;vertical-align:middle;}
+.css_hor_sabinstalacaofim_line { }
+.css_hor_sabinstalacaofim_obj { }
+.css_hor_sabvistoriainicio_label {text-align:right;vertical-align:middle;}
+.css_hor_sabvistoriainicio_line { }
+.css_hor_sabvistoriainicio_obj { }
+.css_hor_sabvistoriafim_label {text-align:right;vertical-align:middle;}
+.css_hor_sabvistoriafim_line { }
+.css_hor_sabvistoriafim_obj { }
+.css_hor_dominstalacaoinicio_label {text-align:right;vertical-align:middle;}
+.css_hor_dominstalacaoinicio_line { }
+.css_hor_dominstalacaoinicio_obj { }
+.css_hor_dominstalacaofim_label {text-align:right;vertical-align:middle;}
+.css_hor_dominstalacaofim_line { }
+.css_hor_dominstalacaofim_obj { }
+.css_hor_domvistoriainicio_label {text-align:right;vertical-align:middle;}
+.css_hor_domvistoriainicio_line { }
+.css_hor_domvistoriainicio_obj { }
+.css_hor_domvistoriafim_label {text-align:right;vertical-align:middle;}
+.css_hor_domvistoriafim_line { }
+.css_hor_domvistoriafim_obj { }
+.css_confde_label { }
+.css_confde_line { }
+.css_confde_obj { }
+.css_confpara_label { }
+.css_confpara_line { }
+.css_confpara_obj { }
+.css_replicar_label { }
+.css_replicar_line { }
+.css_replicar_obj { }

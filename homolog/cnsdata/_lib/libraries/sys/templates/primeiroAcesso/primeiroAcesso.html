@@ -1,0 +1,273 @@
+<html>
+<HEAD>
+    <meta charset="UTF-8">
+    <meta name="vie wport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="../_lib/img/hticnsdata__NM__ico__NM__favicon.ico">
+    <title>CNSDATA</title >
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+    <!-- bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!--SC_JS_LIB-->
+    <!--SC_PAGE_CHARSET-->
+
+    <style>
+        .logo-topo{
+            width: 145px;
+            position: relative;
+            top: -8px;
+        }
+        .divFullScreen {
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            z-index: 0;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+        }
+        .divLeftScreen {
+            background: #fff;
+            position: fixed;
+            right: 0;
+            float: right;
+            /*height: 100%;*/
+            width: 500px;
+            margin: 0;
+            padding: 0;
+            z-index: 1;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            text-align: left;
+        }
+        #login-box-inner {
+            padding: 50px 42px;
+        }
+        form > div {
+            margin-top: 15px;
+        }
+        .nmodal-sm {
+            margin-left: calc(50% - 350px/2);
+        }
+        .nmodal-sm > div {
+            width: 350px;
+        }
+
+        .nmodal-md {
+            margin-left: calc(50% - 500px/2);
+        }
+        .nmodal-md > div {
+            width: 500px;
+        }
+
+        .nmodal-lg {
+            margin-left: calc(50% - 700px/2);
+        }
+        .nmodal-lg > div {
+            width: 700px;
+        }
+        @media (max-width: 500px) {
+            .nmodal-sm, .nmodal-md, .nmodal-lg {
+                margin-left: 1%;
+            }
+            .nmodal-sm > div, .nmodal-md > div, .nmodal-lg > div {
+                width: 98%;
+            }
+        }
+        @media (max-width: 800px){
+            .nmodal-sm, .nmodal-md, .nmodal-lg {
+                margin-left: 2%;
+            }
+            .nmodal-sm > div, .nmodal-md > div, .nmodal-lg > div {
+                width: 95%;
+            }
+        }
+
+
+    </style>
+</HEAD>
+<body>
+<div id="banner" class="divFullScreen" style="
+    background-image: url('{SC_LIB_PUBLIC}templates/img/login-full-image2.jpg');
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    width: 880px;
+    height: 662px;">
+</div>
+<div class="fade" id="alertModel" role="dialog" style="position: absolute; z-index:1000; display:none">
+    <div style="margin-top: 20vh;margin-bottom: 20vh;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalTitle">{lang_btn_yes}</h4>
+            </div>
+            <div class="modal-body" id="modalBody" style="text-align:center">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        resize();
+        form = `
+            <form action="" method="post" {SC_FORM_ATTR} id="form-login">
+                <!--SC_FORM_HIDDEN-->
+            <p class=" " style="text-align: justify;">Como é o seu primeiro acesso, pedimos que altere a sua senha:</p>
+            <div class="input-group input-group-lg">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input {SC_FIELD_INFO_senha} class="form-control text-box single-line {SC_FIELD_CLASS}" onkeyup="changePass()" placeholder="Senha" type="password">
+            </div>
+            <div class="input-group input-group-lg">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input {SC_FIELD_INFO_confirmarSenha} class="form-control text-box single-line {SC_FIELD_CLASS}" onkeyup="changePass()" placeholder="Confirmar senha" type="password">
+            </div>
+            <div class="alert" id="alert-password" style="display:none"></div>
+            <div class="row">
+            <div class="col-sm-3 col-xs-12 col-sm-push-9">
+            <button id="btn-submit" type="submit" class="btn btn-success col-xs-12" disabled onclick="submitForm()">Alterar</button>
+            </div>
+            </div>
+            </form>
+            `;
+        sModal("show", "Primeiro acesso", form, {
+            sizeClass:"lg",
+            pStyle: "text-align:justify"});
+   });
+
+   $(window).resize(function () {
+       resize();
+   });
+
+   function resize() {
+       var formWidth = 0;
+       var bannerWidth = 0;
+       var height = 300;
+       if (window.innerWidth < 570) {
+           formWidth = window.innerWidth;
+       }
+       bannerWidth = window.innerWidth - formWidth;
+       if ($("body").height() > window.innerHeight) {
+           //bannerWidth = bannerWidth - 17;
+       }
+       if (bannerWidth <= 0) {
+           //$('#banner').css('display', 'none');
+           bannerWidth = '100%';
+       } else {
+           $('#banner').css('display', 'inline-block');
+       }
+       if (window.innerHeight > 300) {
+           height = window.innerHeight;
+       }
+        
+       $('#banner').css('width', bannerWidth);
+       $('#banner').css('height', height);
+       $('#form').css('width', formWidth);
+       $('#form').css('height', height);
+       $('#login-box').css('top', height * 0.12);
+       $('#login-logo-small').css('top', height * 0.1);
+   }
+
+    function passwordCheck(password) {
+        var strength = document.getElementById('strength');
+        var strongRegex = new RegExp("^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+        var mediumRegex = new RegExp("^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+        var enoughRegex = new RegExp("(?=.{8,}).*", "g");
+        $('#alert-password').removeClass("alert-danger alert-warning alert-success");
+        if (false == enoughRegex.test(password)) {
+            classStatus = "alert-danger";
+            msgStatus = "A senha deve conter no mínimo 8 caracteres";
+            boolStatus = 0;
+        } else if (strongRegex.test(password)) {
+            classStatus = "alert-success";
+            msgStatus = "Forte!";
+            boolStatus = 1;
+        } else if (mediumRegex.test(password)) {
+            classStatus = "alert-warning";
+            msgStatus = "Médio!";
+            boolStatus = 1;
+        } else {
+            classStatus = "alert-danger";
+            msgStatus = "Fraco!";
+            boolStatus = 0;
+        }
+        $('#alert-password')
+            .addClass(classStatus)
+            .html(msgStatus)
+            .show();
+        return boolStatus;
+    }
+
+   function changePass() {
+        senha1 = $('[name=senha]').val();
+        senha2 = $('[name=confirmarsenha]').val();
+        if (senha1 == senha2) {
+            if (passwordCheck(senha1)) {
+                $('#btn-submit').attr('disabled', false);
+            }
+        } else {
+            if (senha1 && senha2) {
+                $('#alert-password')
+                    .removeClass("alert-danger alert-warning alert-success")
+                    .addClass("alert-danger")
+                    .html("As senhas são diferentes")
+                    .show();
+            }
+            $('#btn-submit').attr('disabled', true);
+        }
+   }
+
+   function submitForm () {
+        senha1 = $('[name=senha]').val();
+        senha2 = $('[name=senha]').val();
+        if (senha1 == senha2) {
+            if (passwordCheck(senha1)) {
+                {SC_FORM_SUBMIT_CALL}
+            }
+        } else {
+            if (senha1 && senha2) {
+                $('#alert-password')
+                    .removeClass("alert-danger alert-warning alert-success")
+                    .addClass("alert-danger")
+                    .html("As senhas são diferentes")
+                    .show();
+            }
+            $('#btn-submit').attr('disabled', true);
+        }
+   }
+
+   function sModal(act, title, body, opt) {
+		$('.scButton_default').css('vertical-align: middle; display:inline-block;');
+		if(act == "show") {
+			if (!opt) {
+				opt = {};
+			} else if (typeof opt == "string") {
+				opt = JSON.parse(opt);
+			}
+
+			opt.type = opt.type ? "text-"+opt.type : '';
+			opt.pClass = opt.pClass ? opt.pClass : '';
+			opt.pStyle = opt.pStyle ? opt.pStyle : '';
+			opt.sizeClass = opt.sizeClass ? "nmodal-"+opt.sizeClass : "nmodal-md";
+
+			$('#modalTitle').html(title);
+			$('#modalBody').html('<p class="'+opt.type+' '+opt.pClass+'" style="'+opt.pStyle+'">'+body+'</p>');
+			$('#alertModel').removeClass(function (index, className) {
+    			return (className.match (/\nmodal-\S+/g) || []).join(' ');
+			});
+			$('#alertModel').addClass(opt.sizeClass + ' in');
+			$('#alertModel').show();
+		} else if (act == "close") {
+			$('#alertModel').hide();
+			$('#alertModel').removeClass('in');
+		}
+	}
+</script>
+</body>
+</html>
